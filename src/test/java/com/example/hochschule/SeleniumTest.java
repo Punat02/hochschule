@@ -28,7 +28,8 @@ public class SeleniumTest {
         System.out.println(driver.getCurrentUrl());
         WebElement btnSubmit = driver.findElement(By.xpath("/html/body/main/div/form/div/div[2]/button"));
         btnSubmit.click();
+        
         // Schließe den WebDriver
-        driver.quit();
+        // driver.quit();
     }
 }
