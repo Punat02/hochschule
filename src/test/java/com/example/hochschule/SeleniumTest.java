@@ -12,6 +12,14 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class SeleniumTest {
+    public static void wait(int ms)
+    {
+        try {
+            Thread.sleep(ms);
+        } catch (InterruptedException ex) {
+            Thread.currentThread().interrupt();
+        }
+    }
     @Test
     public void testSelenium() {
         // WebDriverManager.chromedriver().setup();
@@ -29,7 +37,8 @@ public class SeleniumTest {
         WebElement btnSubmit = driver.findElement(By.xpath("/html/body/main/div/form/div/div[2]/button"));
         btnSubmit.click();
         
-        // Schließe den WebDriver
-        // driver.quit();
+        // Schließe den WebDriver nach 5s
+        wait(5000);
+        driver.quit();
     }
 }
